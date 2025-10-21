@@ -9,20 +9,21 @@
 <head>
 <link rel="stylesheet" href="style.css">
 </head>
-<div id="header" class="header">
-        <h1 class="logo"><img src="logo.jpg"></h1>
-        <h2 class="company">Malpractisn't Medical</h2>
-        <h3 class="spanDate">Today's date: <span id="spanDate"></span></h3>
-        <script type="text/javascript">
-            var months = ['January','February','March','April','May','June','July',
-    'August','September','October','November','December'];       
-    var today = new Date();
-    today.setTime(today.getTime());       
-    document.getElementById("spanDate").innerHTML = months[today.getMonth()] + " " + today.getDate()+ ", " + today.getFullYear();
-        </script>
-</div>
-<hr>
-<div id="section" class="section">
+<body>
+ <div id="header"> == $0
+  <table width="100%">
+   <tbody>
+    <tr>
+     <td>
+      <img id="logo" src="logo.png">
+     </td>
+     <td valign="bottom" align="right">
+      "Today's date: "
+      <span id="today">10/20/2025</span>
+     </td>
+    </tr>
+   </tbody>
+ <div id="section" class="section">
         <br><br>
         <label for="formtitle" class="form-name">Patient Registration Form</label><br><br>
         <table class="form">
@@ -262,7 +263,16 @@
             </form>
         </table>
  </tbody>
-</div>
+ </div>
+
+</body>
+
+ <script src="homework2.js"></script>
+<script>
+  const d = new Date();
+  let text = d.toLocaleDateString();
+  document.getElementById("today").innerHTML = text;
+</script>
 <hr>
 <div id="footer">
     <!--Code for the "contact us" button -->
