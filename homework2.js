@@ -1,3 +1,9 @@
+function removedata()
+{
+  document.getElementById("outputformdata").innerHTML = ("form reset");
+  
+}
+
 function getdata()
 {
   var formcontents = document.getElementById("signup");
