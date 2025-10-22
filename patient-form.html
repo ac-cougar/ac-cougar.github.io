@@ -1,0 +1,292 @@
+ <!--
+ Program name: patient-form.html
+ Author: Adam T Chen
+ Date created: 9/15/2025
+ Date last edited: 9/25/2025
+ Version: 1.0
+ Description: Example of patient registration form commonly used in the medical industry for the MIS 7375 class.-->
+<!doctype html>
+<head>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+ <div id="header"> == $0
+  <table width="100%">
+   <tbody>
+    <tr>
+     <td>
+      <img id="logo" src="logo.png">
+     </td>
+     <td valign="bottom" align="right">
+      "Today's date: "
+      <script type="text/javascript">
+            var months = ['January','February','March','April','May','June','July',
+    'August','September','October','November','December'];       
+    var today = new Date();
+    today.setTime(today.getTime());       
+    document.getElementById("spanDate").innerHTML = months[today.getMonth()] + " " + today.getDate()+ ", " + today.getFullYear();
+        </script>
+     </td>
+    </tr>
+   </tbody>
+ <div id="section" class="section">
+        <br><br>
+        <label for="formtitle" class="form-name">Patient Registration Form</label><br><br>
+        <table class="form">
+          <tbody>
+            <form action="thankyou.html" name="signup" id="signup">
+                <!--Code for name-->
+             <tr class="form">
+              <td align="right">
+               <label for="fname">First name:</label>
+               <label for="midinitial">Middle initial:</label>
+               <label for="lname">Last name:</label>
+              </td>
+              <td>
+               <input type="text" id="fname" name="fname" maxlength="30" size="30" class="form-field" required pattern="[A-Z^a-z- ' ^~]{2,}" oninvalid="this.setCustomValidity('First name not valid.')" oninput="this.setCustomValidity('')" placeholder="John (req'd)" title="Minimum 2 characters; only letters, spaces, "-" and ' allowed.">
+               <input type="text" id="midinitial" name="midinitial" maxlength="1" size="1" class="form-field pattern="[A-Z^a-z- ' ^~]{2,}" oninvalid="this.setCustomValidity('Letters only please.')" oninput="this.setCustomValidity('')" placeholder="D">
+               <input type="text" id="lname" name="lname" maxlength="30" size="30" class="form-field" required pattern="[A-Z^a-z- ' ^~]{2,}" oninvalid="this.setCustomValidity('Last Name is Required')" oninput="this.setCustomValidity('')" placeholder = "Doe (req'd)">
+              </td>
+             </tr>
+                <!--Code for DOB-->
+             <tr class="form">
+              <td>
+               <label for="birthdate">Date of Birth:</label>
+              </td>
+              <td>
+               <input type="date" id="birthdate" size="8" name="birthdate" class="form-field" required><br>
+              </td>
+             </tr>
+             <tr class="form">
+              <td>
+               <label for="socialsecurity>SSN:</label>
+              </td>
+              <td>
+                <input type="password" id="socialsecurity" size="4" minlength="9" maxlength="11" name="socialsecurity" class="form-field" required><br>
+              </td>
+             </tr>
+             <tr class="form">
+              <td>
+               <label for="address1">Address Line 1:</label>
+              </td>
+              <td>
+               <input type="text" id="address1" size = "30" name="address1" maxlength="30" class="form-field" required><br>
+              </td>
+              <td>
+                <label for="address2">Address Line 2:</label>
+              </td>
+              <td>
+                <input type="text" id="address2" size = "30" name="address2" maxlength="30" class="form-field"><br>
+              </td>
+             </tr>
+             <tr class="form">
+              <td>
+               <label for="city">City:</label>
+              </td>
+              <td align="right">
+               <select id="city" name="city" class="form-field" required>
+                <option value="AL">AL</option>
+                <option value="AK">AK</option>
+                <option value="AZ">AZ</option>
+                <option value="AR">AR</option>
+                <option value="CA">CA</option>
+                <option value="CO">CO</option>
+                <option value="CT">CT</option>
+                <option value="DE">DE</option>
+                <option value="FL">FL</option>
+                <option value="GA">GA</option>
+                <option value="HI">HI</option>
+                <option value="ID">ID</option>
+                <option value="IL">IL</option>
+                <option value="IN">IN</option>
+                <option value="IA">IA</option>
+                <option value="KS">KS</option>
+                <option value="KY">KY</option>
+                <option value="LA">LA</option>
+                <option value="ME">ME</option>
+                <option value="MD">MD</option>
+                <option value="MA">MA</option>
+                <option value="MI">MI</option>
+                <option value="MN">MN</option>
+                <option value="MS">MS</option>
+                <option value="MO">MO</option>
+                <option value="MT">MT</option>
+                <option value="NE">NE</option>
+                <option value="NV">NV</option>
+                <option value="NH">NH</option>
+                <option value="NJ">NJ</option>
+                <option value="NM">NM</option>
+                <option value="NY">NY</option>
+                <option value="NC">NC</option>
+                <option value="ND">ND</option>
+                <option value="OH">OH</option>
+                <option value="OK">OK</option>
+                <option value="OR">OR</option>
+                <option value="PA">PA</option>
+                <option value="RI">RI</option>
+                <option value="SC">SC</option>
+                <option value="SD">SD</option>
+                <option value="TN">TN</option>
+                <option value="TX">TX</option>
+                <option value="UT">UT</option>
+                <option value="VT">VT</option>
+                <option value="VA">VA</option>
+                <option value="WA">WA</option>
+                <option value="WV">WV</option>
+                <option value="WI">WI</option>
+                <option value="WY">WY</option>
+                <option value="DC">DC</option>
+                <option value="PR">PR</option>
+               </select>
+              </td>
+              <td align="middle">
+               <label for="zipcode">Zipcode:</label>
+              </td>
+              <td>
+               <input type="text" name="zipcode" minlength = "5" maxlength = "10" size="7" class="form-field" required><br>
+              </td>
+             </tr>                
+             <tr class="form">
+              <td>
+               <label for="email">Email address:</label>
+              </td>
+              <td>
+               <input type="email" name="email" class="form-field" required>
+              </td>
+             </tr>
+             <tr class="form">
+              <td align="right">
+               <label for="symptoms">Please describe any symptoms you are feeling today:</label><br>
+              </td>
+              <td>
+               <textarea id="symptoms" name="symptoms" rows="3" columns="50" class="form-field" required></textarea><br>
+              </td>
+             </tr>
+             <tr class="form">
+              <td align="right">
+               <label for="question">Have you visited any of the following places?</label>
+              </td>
+              <td>
+               <fieldset>
+                    <legend>Check all of the following that apply:<br></legend>
+                    <label for="chikungunya">Places with risk of chikungunya:</label><br>
+                    <input type="checkbox" id="bangladesh" name="recentill" value="bangladesh">
+                    <label for="bangladesh">Bangladesh</label><br>
+                    <input type="checkbox" id="kenya" name="recentill" value="kenya">
+                    <label for="kenya">Kenya</label><br>
+                    <input type="checkbox" id="madagascar" name="recentill" value="madagascar">
+                    <label for="madagascar">Madagascar</label><br>
+                    <input type="checkbox" id="somalia" name="recentill" value="somalia">
+                    <label for="somalia">Somalia</label><br>
+                    <input type="checkbox" id="srilanka" name="recentill" value="srilanka">
+                    <label for="srilanka">Sri Lanka</label><br>
+                    <input type="checkbox" id="guangdong" name="recentill" value="guangdong">
+                    <label for="guangdong">Guangdong Province in China</label><br><br>
+                    <label for="yellowfever">Places with risk of yellow fever:</label><br>
+                    <input type="checkbox" id="columbia" name="recentill" value="columbia">
+                    <label for="columbia">Columbia</label><br><br>
+                    <label for="ebola">Places with risk of ebola:</label><br>
+                    <input type="checkbox" id="drc" name="recentill" value="drc">
+                    <label for="drc">Democratic Republic of the Congo</label><br><br>
+                    <label for="malaria">Places with risk of malaria:</label><br>
+                    <input type="checkbox" id="ethiopia" name="recentill" value="ethiopia">
+                    <label for="ethiopia">Ethiopia</label>
+                </fieldset>
+              </td>
+             </tr>
+             <tr class="form">
+              <td align="right">
+               <label for="gender" class="radio-buttons">Gender:</label>
+              </td>
+              <td>
+               <input type="radio" id="male" name="gender" required>
+               <label for="male">Male</label>
+               <input type="radio" id="female" name="gender" required>
+               <label for="female">Female</label>
+               <input type="radio" id="other" name="gender" required>
+               <label for="other">Other</label>
+              </td>
+             </tr>
+             <tr class="form">
+              <td align="right">
+               <label type="text" name="vaccine" id="vaccine" class="radio-buttons">Have you been vaccinated?</label>
+              </td>
+              <td>
+               <input type="radio" id="yes" name="vaccine" required>
+               <label for="yes">Y</label>
+               <input type="radio" id="no" name="vaccine" required>
+               <label for="no">N</label>
+              </td>
+             </tr>
+             <tr class="form">
+              <td align="right">
+               <label type="text" name="insurance" id="insurance" class="radio-buttons">Do you have insurance?</label>
+              </td>
+              <td>
+               <input type="radio" id="yes2" name="insurance" required>
+               <label for="yes2">Y</label>
+               <input type="radio" id="no2" name="insurance" required>
+               <label for="no2">N</label>
+              </td>
+             </tr>
+             <tr class="form">
+              <td align="right">
+               <label type="text" name="feeling" id="feeling">On a scale of 1 to 10, with 10 being the best, how are you feeling today?</label>
+              </td>
+              <td>
+               1<input type="range" list="markers" name="feeling" id="feeling" min="1" max="10" step="1" value="1">10
+              </td>
+             </tr>
+             <tr class="form">
+              <td align="right">
+               <label for="userID">Please enter a username:</label>
+              </td>
+              <td>
+               <input type="text" name="userID" id="userID" maxlength="20" class="form-field" required>
+              </td>
+             </tr>
+             <tr class="form">
+              <td align="right">
+               <label for="login">Please enter a password:</label>
+              </td>
+              <td>
+               <input type="password" name="login" id="login" class="form-field" required>
+              </td>
+             </tr>
+             <tr class="form">
+              <td align="right">
+               <label for="login2">Please re-enter your password:</label>
+              </td>
+              <td>
+               <input type="password" name="login2" id="login2" class="form-field" required>
+              </td>
+             </tr>
+             <tr>
+              <input type="button" value="Review" onclick="getdata()">
+              <input type="reset" value="Clear and start over" class="form-field">
+              <input type="submit" value="Submit" class="form-field">
+             </tr>
+            </form>
+        </table>
+ </tbody>
+ </div>
+
+</body>
+
+ <script src="homework2.js"></script>
+<script>
+  const d = new Date();
+  let text = d.toLocaleDateString();
+  document.getElementById("today").innerHTML = text;
+</script>
+<hr>
+<div id="footer">
+    <!--Code for the "contact us" button -->
+    <a href="mailto:atchen3@cougarnet.uh.edu">
+                <button type="button" class="contact">Contact Us</button>
+    </a>
+    <!--Code for the rest of the footer-->
+    <label for="company_name" class="compfoot">Malpractisn't Medical</label>
+    <br><label for="PObox" class="compfoot">PO Box: 5867</label>
+    <br><label for="hq" class="compfoot">Cypress, TX 77429</label>
+</div>
